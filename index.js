@@ -1,6 +1,6 @@
 const express = require('express');
 const connectDB = require('./config/db')
-const port= 8001;
+const port = 8001;
 
 const app = express();
 
@@ -11,6 +11,6 @@ app.use(express.json())
 app.use('/api/products', require('./routes/product'))
 
 
-app.listen(port,()=>{
+app.listen(port, () => {
     console.warn(`server on port ${port}`)
 })

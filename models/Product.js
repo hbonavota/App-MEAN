@@ -18,8 +18,8 @@ const ProductSchema = mongoose.Schema({
         required: true
     },
     dateRelease: {
-        type:Date,
-        default: Date.now
+        type: Date,
+        default: Date.now()
     }
 })
 
