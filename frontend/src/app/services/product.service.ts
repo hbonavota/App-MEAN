@@ -7,7 +7,7 @@ import { Product } from '../models/product';
   providedIn: 'root'
 })
 export class ProductService {
-  url = '/api/products/'
+  url = 'https://mean-server-app.herokuapp.com/api/products/'
 
   constructor(private http: HttpClient) { }
   
