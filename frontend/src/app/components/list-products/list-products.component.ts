@@ -19,7 +19,6 @@ export class ListProductsComponent implements OnInit {
   
   getallProducts() {
     this. _productService.getProducts().subscribe(data => {
-      console.log(data);
       this.listProducts = data;
     },
     error => {
