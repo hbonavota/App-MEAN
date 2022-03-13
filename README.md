@@ -13,6 +13,8 @@ Created with
 + *Mongodb.*
 + *Express.js.*
 + *Node.js*
++ *Heroku*
++ *Vercel*
 
 
 ## View Online in Vercel Deployinment
@@ -86,7 +88,9 @@ npm start
 # Delete-Product
 ![Screenshot.](./imgs/deleted.PNG)
 
-## View Online in Vercel Deployinment
+# Deployinment
+
+## View Online - Deploy Backend in Heroku and Frontend in Vercel 
 
 ____
 + [Click Here](https://app-mean-crud.vercel.app/).
