@@ -1,15 +1,81 @@
-# Cliente
+#  MEAN APP CRUD Products
+
+Simple Apps with CRUD made with the MEAN Stack (Mongodb, Express.js, Angular, Node.js )
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.6.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Created with
++ *Javascript.*
++ *TypeScript.* 
++ *Angular.*
++ *Mongodb*
++ *Express.js.*
++ *Node.js*
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## View Online in Vercel Deployinment
+=>
++ [Click Here](https://app-mean-crud.vercel.app/).
 
-## Build
+# Directions for executing the project
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+# Install Frontend
+
++ `npm install`.
+
+```
+/frontend (main)
+
+`npm install` 
+or 
+`npm i`
+
+```
+
+
+# Install Backend
+
++ `npm install`.
+
+```
+/ (main)
+
+`npm install` 
+or 
+`npm i`
+
+```
+
++ Finally, run the process with `npm start` in frontend and backend
+
+```
+/frontend (master)
+npm start
+
+```
+
+# Preview 
+
+# List-Products
+
+![Screenshot.](./imgs/list-products.PNG)
+
+
+# Create-Product
+![Screenshot.](./imgs/create-product-disabled.PNG)
+![Screenshot.](./imgs/isRequerid.PNG)
+![Screenshot.](./imgs/enabled.PNG)
+![Screenshot.](./imgs/success.PNG)
+
+# Edit-Produduct
+![Screenshot.](./imgs/edit.PNG)
+
+# Delete-Product
+![Screenshot.](./imgs/deleted.PNG)
+
+## View Online in Vercel Deployinment
+
+____
++ [Click Here](https://app-mean-crud.vercel.app/).
+____
