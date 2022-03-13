@@ -15,8 +15,13 @@ const createProduct = async (req, res) => {
   try {
     let product;
     //creating new product
-    product = new Product(req.body);
-    await product.save();
+    const {name, category, location, price} = req.body;
+    const findProductInBd = await Product.findById(isValidID(req.body.id))
+    if(name || category || location || price || !findProductInBd) {
+      product = new Product(req.body);
+      await product.save();
+      return res.send(product);
+    }
     res.send(product);
   } catch (error) {
     console.log(error);
