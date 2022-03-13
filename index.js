@@ -13,6 +13,11 @@ if(process.env.NODE_ENV !== 'production'){
 connectDB()
 app.use(cors())
 app.use(express.json())
+app.use( '/',(req, res) => {
+    res.status(200).send("server ready");
+}
+)
+
 app.use('/api/products', require('./routes/product'))
 
 
