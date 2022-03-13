@@ -1,10 +1,11 @@
 const express = require('express');
 const connectDB = require('./config/db');
 const cors = require('cors');
+const morgan = require('morgan')
 const port = process.env.PORT || 8001
 
 const app = express();
-
+app.use(morgan());
 if(process.env.NODE_ENV !== 'production'){
     require("dotenv").config();
 }

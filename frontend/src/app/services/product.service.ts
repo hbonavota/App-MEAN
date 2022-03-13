@@ -8,13 +8,11 @@ import { Product } from '../models/product';
 })
 export class ProductService {
   url = 'https://mean-server-app.herokuapp.com/api/products/'
-
   constructor(private http: HttpClient) { }
   
   getProducts(): Observable<any> {
     return this.http.get(this.url);
   }
-
   deleteProduct(id : string): Observable<any> {
     return this.http.delete(this.url + id);
   }
@@ -23,5 +21,8 @@ export class ProductService {
   }
   getProduct(id: string):  Observable<any> {
     return this.http.get(this.url + id);
+  }
+  editProduct(id: string, product: Product): Observable<any> {
+    return this.http.put(this.url + id, product);
   }
 }

@@ -40,16 +40,30 @@ export class CreateProductComponent implements OnInit {
       location: this.productForm.get("location")?.value,
       price: this.productForm.get("price")?.value,
     }
-    this._productService.saveProduct(PRODUCT).subscribe(data => {
-      this.toastr.success('The Product was created!', 'success!');
-      this.router.navigate(['/']);
+    if(this.id !==null) {
+      //edit product
+      this._productService.editProduct(this.id, PRODUCT).subscribe(data=> {
+        this.toastr.info('The Product was edited ok!', 'Product edited!');
+        this.router.navigate(['/']);
+      }, error => {
+        console.warn(error);
+        this.productForm.reset();
+      })
 
+    } else {
+      //create product
+      this._productService.saveProduct(PRODUCT).subscribe(data => {
+        this.toastr.success('The Product was created!', 'success!');
+        this.router.navigate(['/']);
+      }, error => {
+        console.warn(error);
+        this.productForm.reset();
+      })  
+    }
 
-    }, error => {
-      console.log(error);
-      this.productForm.reset();
-    })
+  
   }
+
  isEdit(){
    if(this.id !== null) {
      this.title = 'Edit Product';
