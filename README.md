@@ -9,7 +9,8 @@ Created with
 + *Javascript.*
 + *TypeScript.* 
 + *Angular.*
-+ *Mongodb*
++ *bootstrap5.*
++ *Mongodb.*
 + *Express.js.*
 + *Node.js*
 
@@ -46,6 +47,17 @@ or
 `npm i`
 
 ```
+# Environments
+
++ add .env
+
+
+```
+DB_MONGO= <add URI MONGO>
+
+```
+
+
 
 + Finally, run the process with `npm start` in frontend and backend
 
