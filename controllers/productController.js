@@ -1,7 +1,7 @@
 const Product = require("../models/Product");
 
 const isValidID = (id) => {
-  if (id.length < 20 || id.length > 25 ) {
+  if ( !id || id.length < 20 || id.length > 25 ) {
     return null;
   }
   let patt = new RegExp (/[a-z0-9]+/g);
