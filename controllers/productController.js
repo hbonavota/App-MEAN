@@ -59,7 +59,7 @@ const updateProduct = async (req, res) => {
     product.price = price;
 
     product = await Product.findOneAndUpdate({ _id: id }, product, {
-      new: true,
+      new: false,
     });
     res.json(product);
   } catch (error) {
