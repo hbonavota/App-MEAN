@@ -1,28 +1,32 @@
 const Product = require("../models/Product");
 
 const isValidID = (id) => {
-  if ( !id || id.length < 20 || id.length > 25 ) {
+  if (!id || id.length < 20 || id.length > 25) {
     return null;
   }
-  let patt = new RegExp (/[a-z0-9]+/g);
-  if (!patt.test(id)){
+  let patt = new RegExp(/[a-z0-9]+/g);
+  if (!patt.test(id)) {
     return null
   }
   return id;
-} 
+}
+
+const formatToSave = ({ name, category, location, price }) => {
+  return {
+    name,
+    category,
+    location,
+    price,
+  }
+}
 
 const createProduct = async (req, res) => {
   try {
     let product;
     //creating new product
-    const {name, category, location, price, id} = req.body;
-    //if have any ID
-    const findProductInBd = await Product.findById(isValidID(id || req.params.id))
-    if(findProductInBd){
-      return updateProduct(req,res);
-    }
-    if(name || category || location || price || !findProductInBd) {
-      product = new Product(req.body);
+    const { name, category, location, price } = req.body;
+    if (name || category || location || price) {
+      product = await new Product(formatToSave({ name, category, location, price }));
       await product.save();
       return res.send(product);
     }
@@ -53,13 +57,10 @@ const updateProduct = async (req, res) => {
     if (!product) {
       return res.status(404).json({ msg: "the product not exist" });
     }
-    product.name = name;
-    product.category = category;
-    product.location = location;
-    product.price = price;
-
-    product = await Product.findOneAndUpdate({ _id: id }, product, {
-      new: false,
+    product = await Product.findOneAndUpdate(
+      { _id: id },
+      formatToSave({ name, category, location, price }), {
+      new: true,
     });
     res.json(product);
   } catch (error) {
@@ -89,8 +90,8 @@ const deleteProduct = async (req, res) => {
     if (!product) {
       return res.status(404).json({ msg: "the product not exist" });
     }
-    await Product.findOneAndRemove({_id: id});
-    res.json({msg: 'Product deleted'})
+    await Product.findOneAndRemove({ _id: id });
+    res.json({ msg: 'Product deleted' })
 
   } catch (error) {
     console.log(error);

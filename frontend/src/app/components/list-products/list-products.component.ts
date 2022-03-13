@@ -22,7 +22,7 @@ export class ListProductsComponent implements OnInit {
       this.listProducts = data;
     },
     error => {
-      console.log(error);
+      console.warn(error);
     }) 
   }
   deleteProduct(id:any){
@@ -30,7 +30,7 @@ export class ListProductsComponent implements OnInit {
       this.toastr.error('The product was deleted','Product deleted')
       this.getallProducts();
     }, error => {
-      console.log(error);
+      console.warn(error);
     })
   }
 }
