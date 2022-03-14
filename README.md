@@ -15,6 +15,7 @@ Created with
 + *Node.js*
 + *Heroku*
 + *Vercel*
++ *Testing : Cypress.io*
 
 
 ## View Online in Vercel Deployinment
@@ -30,8 +31,12 @@ Created with
 ```
 /frontend (main)
 
+
+
 `npm install` 
+
 or 
+
 `npm i`
 
 ```
@@ -44,8 +49,12 @@ or
 ```
 / (main)
 
+
+
 `npm install` 
+
 or 
+
 `npm i`
 
 ```
@@ -64,7 +73,9 @@ DB_MONGO= <add URI MONGO>
 + Finally, run the process with `npm start` in frontend and backend
 
 ```
-/frontend (master)
+/frontend (main)
+
+
 npm start
 
 ```
@@ -92,6 +103,24 @@ npm start
 
 ## View Online - Deploy Backend in Heroku and Frontend in Vercel 
 
+
 ____
 + [Click Here](https://app-mean-crud.vercel.app/).
 ____
+
+
+# TESTING WITH CYPRESS.IO
+
++ Run all tests with 
+
+
+```
+/MEAN (main)
+
+
+npm test or cypress open
+
+```
+
+![Screenshot.](./imgs/testing.PNG)
+
