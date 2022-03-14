@@ -27,7 +27,9 @@
               </tr>
             </tbody>
           </table>
-          <h5 style= "text-align: start; margin-top: 10px;" *ngIf="listProducts.length == 0">No items to show</h5>
+        </div>
+        <div style= "text-align: center; margin-top: 10px;" *ngIf="listProducts.length == 0" class="spinner-grow text-danger" role="status">
+          <span class="sr-only">Loading...</span>
         </div>
       </div>
     </div>
